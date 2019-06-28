@@ -31,7 +31,11 @@ class CrawlerCheck
 
         $host = gethostbyaddr($ip);
         $ipAfterLookup = gethostbyname($host);
-
+        
+        if($host === $ipAfterLookup){
+            return false;
+        }
+        
         $hostIsValid = !!array_filter($this->validHosts, function ($validHost) use ($host) {
             return $this->endsWith($host, $validHost);
         });
@@ -46,6 +50,6 @@ class CrawlerCheck
      */
     protected function endsWith($text, $ending)
     {
-        return !!(strpos($text, $ending) + strlen($ending) !== strlen($text));
+        return !!(strpos($text, $ending) + strlen($ending) === strlen($text));
     }
 }
