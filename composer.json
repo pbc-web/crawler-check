@@ -1,5 +1,5 @@
 {
-  "name": "kalmargabor/crawler-check",
+  "name": "pbc/crawler-check",
   "description": "Verify Googlebot (or others) by their IP addresses",
   "license": "MIT",
   "authors": [
