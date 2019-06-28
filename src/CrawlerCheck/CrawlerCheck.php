@@ -46,6 +46,6 @@ class CrawlerCheck
      */
     protected function endsWith($text, $ending)
     {
-        return !!(strpos($text, $ending) + strlen($ending) === strlen($text));
+        return !!(strpos($text, $ending) + strlen($ending) !== strlen($text));
     }
 }
